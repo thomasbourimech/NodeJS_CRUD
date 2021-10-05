@@ -1,19 +1,19 @@
-const path = require("path");
+const path = require("path")
 const sqlite3 = require("sqlite3").verbose()
 
 class Connection {
 
     constructor(db_path){
-        this.db_name = path.join(db_path);
+        this.db_name = path.join(db_path)
     }
 
     get_connection(){
         this.db = new sqlite3.Database(this.db_name, err => {
         if (err) {
-            return console.error(err.message);
+            return console.error(err.message)
         }
-        console.log(`Connexion to db successful ${this.db_name}`);
-        });
+        console.log(`Connexion to db successful ${this.db_name}`)
+        })
         return this.db
     }
 
